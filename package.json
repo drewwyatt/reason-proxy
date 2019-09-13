@@ -2,12 +2,18 @@
   "name": "reason-proxy",
   "version": "0.1.0",
   "license": "MIT",
-  "main": "src/proxy.bs.js",
+  "scripts": {
+    "build": "bsb -make-world",
+    "package": "serverless webpack",
+    "start": "serverless offline",
+    "watch": "yarn build -w"
+  },
   "dependencies": {
-    "@ahrefs/bs-aws-lambda": "^1.0.0",
-    "bs-platform": "^5.0.6"
+    "@ahrefs/bs-aws-lambda": "^1.0.0"
   },
   "devDependencies": {
+    "bs-platform": "^5.0.6",
+    "serverless": "^1.52.0",
     "serverless-offline": "^5.11.0",
     "serverless-webpack": "^5.3.1",
     "webpack": "^4.40.0"
