@@ -4,7 +4,9 @@
   "license": "MIT",
   "scripts": {
     "build": "bsb -make-world",
+    "deploy": "serverless deploy",
     "package": "serverless webpack",
+    "serverless": "serverless",
     "start": "serverless offline",
     "watch": "yarn build -w"
   },

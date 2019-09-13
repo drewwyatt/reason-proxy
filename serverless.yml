@@ -1,3 +1,5 @@
+org: drewjwyatt
+app: reason-proxy-app
 service:
   name: reason-proxy
 
