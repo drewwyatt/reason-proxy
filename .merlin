@@ -1,0 +1,11 @@
+####{BSB GENERATED: NO EDIT
+FLG -ppx /Users/drewwyatt/Projects/reason-proxy/node_modules/bs-platform/lib/bsppx.exe
+S /Users/drewwyatt/Projects/reason-proxy/node_modules/bs-platform/lib/ocaml
+B /Users/drewwyatt/Projects/reason-proxy/node_modules/bs-platform/lib/ocaml
+FLG -nostdlib -color always
+FLG -w -30-40+6+7+27+32..39+44+45+101
+S /Users/drewwyatt/Projects/reason-proxy/node_modules/@ahrefs/bs-aws-lambda/lib/ocaml
+B /Users/drewwyatt/Projects/reason-proxy/node_modules/@ahrefs/bs-aws-lambda/lib/ocaml
+S src
+B lib/bs/src
+####BSB GENERATED: NO EDIT}
