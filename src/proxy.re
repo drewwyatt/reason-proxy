@@ -1,13 +1,15 @@
 let handler: AwsLambda.APIGatewayProxy.handler =
-  (_event, _context, cb) => {
-    cb(
-      Js.null, /* no error, we want null here */
-      /* this function is a helper to return a correctly formated response */
-      AwsLambda.APIGatewayProxy.result(
-        ~body=`Plain("Hello from reason code!"),
-        ~statusCode=200,
-        (),
-      ),
-    );
-    Js.Promise.resolve();
+  (event, _context) => {
+    open AwsLambda.APIGatewayProxy;
+    let promise =
+      Js.Promise.make((~resolve, ~reject as _) => {
+        let greeting =
+          switch (event->Event.bodyGet->Js.Nullable.toOption) {
+          | None => "Hello from reason!"
+          | Some(n) => "Hello, " ++ n ++ "!"
+          };
+        resolve(. result(~body=`Plain(greeting), ~statusCode=200, ()));
+      });
+
+    promise;
   };

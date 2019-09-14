@@ -2,11 +2,6 @@
 # yarn lockfile v1
 
 
-"@ahrefs/bs-aws-lambda@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@ahrefs/bs-aws-lambda/-/bs-aws-lambda-1.0.0.tgz#02b391b3e751d347e5b7776b4f3c903f8e5ceddc"
-  integrity sha1-ArORs+dR00flt3drTzyQP45c7dw=
-
 "@hapi/accept@3.x.x":
   version "3.2.3"
   resolved "https://registry.yarnpkg.com/@hapi/accept/-/accept-3.2.3.tgz#6947259928ed28df2736c7daffbfc739b72adfcc"

@@ -21,3 +21,6 @@ functions:
       - http:
           method: get
           path: /proxy
+      - http:
+          method: post
+          path: /proxy
