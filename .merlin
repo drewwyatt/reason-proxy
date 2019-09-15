@@ -4,6 +4,8 @@ S /Users/drewwyatt/Projects/reason-proxy/node_modules/bs-platform/lib/ocaml
 B /Users/drewwyatt/Projects/reason-proxy/node_modules/bs-platform/lib/ocaml
 FLG -nostdlib -color always
 FLG -w -30-40+6+7+27+32..39+44+45+101
+S /Users/drewwyatt/Projects/reason-proxy/node_modules/bs-fetch/lib/ocaml
+B /Users/drewwyatt/Projects/reason-proxy/node_modules/bs-fetch/lib/ocaml
 S src
 B lib/bs/src
 S src/bindings

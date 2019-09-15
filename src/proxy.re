@@ -1,15 +1,33 @@
+let makeRequest = url =>
+  Js.Promise.(
+    Fetch.fetch(url)
+    |> then_(Fetch.Response.text)
+    |> then_(text =>
+         AwsLambda.APIGatewayProxy.result(
+           ~body=`Plain(text),
+           ~statusCode=200,
+           (),
+         )
+         |> resolve
+       )
+  );
+
 let handler: AwsLambda.APIGatewayProxy.handler =
   (event, _context) => {
     open AwsLambda.APIGatewayProxy;
+    let urlParam =
+      event->Event.queryStringParametersGet
+      |> Js.Nullable.toOption
+      |> Js.Option.andThen((. params) => Js.Dict.get(params, "url"));
+
     let promise =
-      Js.Promise.make((~resolve, ~reject as _) => {
-        let greeting =
-          switch (event->Event.bodyGet->Js.Nullable.toOption) {
-          | None => "Hello from reason!"
-          | Some(n) => "Hello, " ++ n ++ "!"
-          };
-        resolve(. result(~body=`Plain(greeting), ~statusCode=200, ()));
-      });
+      switch (urlParam) {
+      | Some(url) => url->makeRequest
+      | None =>
+        Js.Promise.resolve(
+          result(~body=`Plain("No URL"), ~statusCode=400, ()),
+        )
+      };
 
     promise;
   };

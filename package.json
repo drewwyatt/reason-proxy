@@ -10,7 +10,9 @@
     "start": "serverless offline",
     "watch": "yarn build -w"
   },
-  "dependencies": {},
+  "dependencies": {
+    "bs-fetch": "^0.5.0"
+  },
   "devDependencies": {
     "bs-platform": "^5.0.6",
     "serverless": "^1.52.0",

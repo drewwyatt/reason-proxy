@@ -10,6 +10,7 @@
   },
   "suffix": ".bs.js",
   "bs-dependencies": [
+    "bs-fetch"
   ],
   "bsc-flags": [
     "-bs-super-errors"
