@@ -25,7 +25,7 @@ let handler: AwsLambda.APIGatewayProxy.handler =
       | Some(url) => url->makeRequest
       | None =>
         Js.Promise.resolve(
-          result(~body=`Plain("No URL"), ~statusCode=400, ()),
+          result(~body=`Plain("Please provide a url"), ~statusCode=400, ()),
         )
       };
 
